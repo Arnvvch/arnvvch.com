@@ -1,3 +1,28 @@
+<h1 style="text-align:center;">WWW.ARNCH.TOP Beta</h1>
+<!--p align="center">
+  <img src="assets/logo.png?raw=true" width="350" title="WWW.ARNCH.TOP">
+</p-->
+
+## What is it?
+
+
+## Features
+ 
+## How to install
+- Based on PHP7.4 (required)
+
+```
+git clone https://github.com/Arnvvch/WWW.ARNCH.TOP.git
+```
+
+## Usage
+
+
+## Issues:
+If you come across any issues please report them [here](https://github.com/Arnvvch/WWW.ARNCH.TOP/issues)
+
+## License
+```
 MIT License
 
 Copyright (c) 2024 Arnch, Arnav Chotkan
@@ -19,3 +44,5 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+```

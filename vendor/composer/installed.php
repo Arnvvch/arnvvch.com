@@ -1,0 +1,41 @@
+<?php return array(
+    'root' => array(
+        'name' => '__root__',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => 'fd8573d5b60d7ce72b60087b119f76c16de44405',
+        'type' => 'library',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => true,
+    ),
+    'versions' => array(
+        '__root__' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => 'fd8573d5b60d7ce72b60087b119f76c16de44405',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'imagine/imagine' => array(
+            'pretty_version' => '1.3.5',
+            'version' => '1.3.5.0',
+            'reference' => '7151d553edec4dc2bbac60419f7a74ff34700e7f',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../imagine/imagine',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'p-chess/chess' => array(
+            'pretty_version' => '0.5.0',
+            'version' => '0.5.0.0',
+            'reference' => '7098c974b37388c30c858513466d488126de6af2',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../p-chess/chess',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+    ),
+);
