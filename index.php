@@ -10,8 +10,8 @@ include('global/base64url.php');
     <title>Document</title>
     <link rel="stylesheet" href="static/css/style.css">
     <link rel="stylesheet" href="static/css/orbs.css">
-    <script src="cdn/internal/proxy.php?filecache=<?php echo(base64url_encode('cdnjs.cloudflare.com/ajax/libs/htmx/1.9.10/htmx.min.js')); ?>&type=text/javascript" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link href="cdn/internal/proxy.php?filecache=<?php echo(base64url_encode('fonts.googleapis.com/css2?family=Oswald:wght@500&family=Ubuntu&family=Roboto+Slab&display=swap')); ?>&type=text/css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/htmx/1.9.10/htmx.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Ubuntu&family=Roboto+Slab&display=swap" rel="stylesheet">
     <script src="static/js/script.js"></script>
 </head>
 <body hx-get="home.php" hx-trigger="load" hx-swap="innerHTML swap:0.4s" hx-target=".content">
