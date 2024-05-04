@@ -1,6 +1,0 @@
-{
-    "require": {
-        "p-chess/chess": "^0.5.0",
-        "imagine/imagine": "^1.3"
-    }
-}

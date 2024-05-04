@@ -1,113 +1,88 @@
 <?PHP
-if(empty($_POST['email']) || empty($_POST['message'])){
-    echo "Message or EMail field empty!";
-    exit;
-}
+include('cdn/discord/api/api.php');
 
-//
-//-- https://gist.github.com/Mo45/cb0813cb8a6ebcd6524f6a36d4f8862c
-//
-    function discordmsg($msg, $webhook) {
-        if($webhook != "") {
-            $ch = curl_init( $webhook );
-            curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-type: application/json'));
-            curl_setopt( $ch, CURLOPT_POST, 1);
-            curl_setopt( $ch, CURLOPT_POSTFIELDS, $msg);
-            curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, 1);
-            curl_setopt( $ch, CURLOPT_HEADER, 0);
-            curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
+if(!empty($_POST['email']) && !empty($_POST['message'])) {
+    $message = array(
+        //"content" => "",
  
-            $response = curl_exec( $ch );
-            // If you need to debug, or find out why you can't send message uncomment line below, and execute script.
-            echo $response;
-            curl_close( $ch );
-        }
-    }
- 
-    // URL FROM DISCORD WEBHOOK SETUP
-    $webhook = "https://discord.com/api/webhooks/1211822396722642975/N7PHrdTAu7Oi1TB0NmYdSLctUxJ3-zMYl9sj9gi1C8i4VVgX3wXVL7L-KyyHTj8yhdb3"; 
-    $timestamp = date("c", strtotime("now"));
-    $msg = json_encode([
-    // Message
-    "content" => "",
- 
-    // Username
-    "username" => "ARNCH.TOP Support",
- 
-    // Avatar URL.
-    // Uncomment to use custom avatar instead of bot's pic
-    "avatar_url" => "https://arnch.top/static/images/ARNCH.TOP.png",
- 
-    // text-to-speech
-    "tts" => false,
- 
-    // file_upload
-    // "file" => "",
- 
-    // Embeds Array
-    "embeds" => [
-        [
-            // Title
-            "title" => $_POST['email'],
- 
-            // Embed Type, do not change.
-            "type" => "rich",
- 
-            // Description
-            "description" => $_POST['message'],
- 
-            // Link in title
-            //"url" => "https://gist.github.com/Mo45/cb0813cb8a6ebcd6524f6a36d4f8862c",
- 
-            // Timestamp, only ISO8601
-            "timestamp" => $timestamp,
- 
-            // Left border color, in HEX
-            "color" => hexdec( "3366ff" ),
- 
-            // Footer text
-            //"footer" => [
-            //    "text" => "GitHub.com/Mo45",
-            //    "icon_url" => "https://ru.gravatar.com/userimage/28503754/1168e2bddca84fec2a63addb348c571d.jpg?size=375"
-            //],
- 
-            // Embed image
-            //"image" => [
-            //    "url" => "https://ru.gravatar.com/userimage/28503754/1168e2bddca84fec2a63addb348c571d.jpg?size=600"
-            //],
- 
-            // thumbnail
-            //"thumbnail" => [
-            //    "url" => "https://ru.gravatar.com/userimage/28503754/1168e2bddca84fec2a63addb348c571d.jpg?size=400"
-            //],
- 
-            // Author name & url
-            "author" => [
-                "name" => "ARNCH.TOP Support",
-                "url" => "https://arnch.top/"
-            ],
- 
-            // Custom fields
-            "fields" => [
-                // Field 1
-                //[
-                //    "name" => "Field #1",
-                //    "value" => "Value #1",
-                 //   "inline" => false
-                //],
-                // Field 2
-                //[
-                 //   "name" => "Field #2",
-                    //"value" => "Value #2",
-                   // "inline" => true
-                //]
-                // etc
+        // Username
+        //"username" => "ARNCH.TOP Support",
+        
+        // text-to-speech
+        "tts" => false,
+        
+        // file_upload
+        // "file" => "",
+        
+        // Embeds Array
+        "embeds" => [
+            [
+                // Title
+                "title" => "You recieved a contact message from " . $_POST['email'],
+        
+                // Embed Type, do not change.
+                "type" => "rich",
+        
+                // Description
+                //"description" => "",
+        
+                // Link in title
+                //"url" => "",
+        
+                // Timestamp, only ISO8601
+                "timestamp" => date("c", strtotime("now")),
+        
+                // Left border color, in HEX
+                //"color" => hexdec( "3366ff" ),
+        
+                // Footer text
+                "footer" => [
+                    "text" => "The Web of Arnav",
+                   "icon_url" => "https://arnch.top/"
+                ],
+        
+                // thumbnail
+                "thumbnail" => [
+                    "url" => "https://arnch.top/static/images/icon.png"
+                ],
+        
+                // Author name & url
+                "author" => [
+                    "name" => "Arnav's Contact Form",
+                    "url" => "https://arnch.top/"
+                ],
+        
+                // Custom fields
+                "fields" => [
+                    [
+                        "name" => "User Info",
+                        "value" => "Email: " . $_POST['email'] . "\n IP: " . $_SERVER['REMOTE_ADDR'] . "\n User Agent: " . $_SERVER['HTTP_USER_AGENT'],
+                        "inline" => false
+                    ],
+                    [
+                        "name" => "Message:",
+                        "value" => $_POST['message'],
+                        "inline" => true
+                    ]
+                ]
             ]
-        ]
-    ]
- 
-], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE );
- 
-    discordmsg($msg, $webhook); // SENDS MESSAGE TO DISCORD
-    echo "Your message hes been sent!";
+        ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE );
+        
+        messageDiscord($message);
+
+        $response = "Message sent!";
+} else {
+    $response = "ERROR: Message or Email field is empty!";
+};
+
 ?>
+
+<div class="contact" id="f1">
+    <div class="window contact-win">
+        <div class="context">
+            <div class="title">Contact Message Sent</div>
+            <div class="actions"><img src="static/images/icons/011-cancel.png" alt="Close"></div>
+        </div>
+        <?php echo $response;?>
+    </div>
+</div>
