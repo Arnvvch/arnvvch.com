@@ -1,6 +1,6 @@
 <?php
 function MakeRequest($endpoint, $data) {
-    $key = json_decode(file_get_contents(__DIR__ . '\..\..\..\keys.json'), true);
+    $key = json_decode(file_get_contents(dirname(__DIR__, 3) . "\keys.json"), true);
 
     # Set endpoint
     $url = "https://discord.com/api/".$endpoint."";

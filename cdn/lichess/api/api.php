@@ -1,6 +1,6 @@
 <?php
 function challengeLichess($username) {
-    $key = json_decode(file_get_contents(__DIR__ . '\..\..\..\keys.json'), true);
+    $key = json_decode(file_get_contents(dirname(__DIR__, 3) . "\keys.json"), true);
     
     $url = 'https://lichess.org/api/challenge/' . $username;
 

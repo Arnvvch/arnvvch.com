@@ -153,6 +153,7 @@ body {
         justify-content: baseline;
         margin-left: 0;
         width: 100%;
+        display: none;
     }
 
     .header {
@@ -160,6 +161,7 @@ body {
         height: auto;
         align-items: center;
         flex-direction: column;
+        display: none;
     }
 
     .brand-itm {
@@ -248,6 +250,10 @@ body {
     width: 100%;
 }
 
+.dmca-badge img{
+    height: 50px;
+}
+
 .dmca-badge {
     margin-top: auto;
     align-self: center;
@@ -257,6 +263,7 @@ body {
 .footer .window{
     width: 18rem;
     margin-right: auto;
+    padding: 0;
 }
 
 .footer .window form input {
@@ -286,10 +293,10 @@ body {
     }
     
     .dmca-badge {
-        margin-right: auto;
+        margin-right: 0;
         margin-left: auto;
         margin-top: 2rem;
-        width: 100%;
+        width: auto;
     }
     
     .footer .window{
@@ -493,12 +500,14 @@ body {
     max-height: calc(100vh - 6rem);
     margin: 0;
     max-width: 60vw;
+    grid-area: 'me';
 }
 
 .window.homewin {
-    width: 100%;
+    
     margin-top: 20vh;
     height: min-content;
+    grid-area: 'homewin';
 }
 
 .hometxt {
@@ -511,10 +520,10 @@ body {
 }
 
 .home-bar {
-    display: flex;
+    display: grid;
     padding: 0 0 0 0;
-    flex-grow : 1;
-    flex-direction: row;
+    grid-template-areas: 'me homewin';
+    width: calc(100% - 2rem);
 }
 
 .info {
@@ -530,10 +539,17 @@ body {
 
 @media (orientation: portrait) {
     .home-bar {
-        display: flex;
-        padding: 0 0 0 0;
-        flex-grow : 1;
         flex-direction: column-reverse;
+        grid-template-areas: 'homewin' 'me';
+    }
+
+    .me {
+        order: 2;
+        justify-self: center;
+    }
+
+    .window.homewin {
+        order: 1;
     }
 }
 
@@ -714,11 +730,29 @@ input.email {
     grid-area: 'col';
     width: calc(100% - 2rem);
     gap: 2rem;
-    height:fit-content;
+    height: fit-content;
 }
 
 @media (orientation: portrait) {
     .window-page {
         grid-template-areas:'col';
     }
+}
+
+.noscroll {
+    overflow: visible;
+    max-height: 100%;
+}
+
+.read {
+    position: sticky;
+    width: auto;
+    background-color: rgba(255, 255, 255, 0.85);
+    bottom: 0rem;
+    padding: 0.5rem;
+    border-radius: 0.8rem;
+    color: rgb(75, 75, 75);
+    box-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.2);
+    font-size: 1.4rem;
+    text-align: center;
 }

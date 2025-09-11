@@ -1,7 +1,7 @@
-<h1 style="text-align:center;">WWW.ARNCH.TOP Beta</h1>
-<!--p align="center">
-  <img src="assets/logo.png?raw=true" width="350" title="WWW.ARNCH.TOP">
-</p-->
+<h1 style="text-align:center;">The Web of Arnav PRE RELEASE v1.2</h1>
+<p align="center">
+  <img src="static/images/icon.png?raw=true" width="350" title="Logo of The Web of Arnav">
+</p>
 
 ## What is it?
 
@@ -12,14 +12,14 @@
 - Based on PHP7.4 (required)
 
 ```
-git clone https://github.com/Arnvvch/WWW.ARNCH.TOP.git
+git clone https://github.com/Arnvvch/WebOfArnav.git
 ```
 
 ## Usage
 
 
 ## Issues:
-If you come across any issues please report them [here](https://github.com/Arnvvch/WWW.ARNCH.TOP/issues)
+If you come across any issues please report them [here](https://github.com/Arnvvch/WebOfArnav/issues)
 
 ## License
 ```
