@@ -8,10 +8,6 @@
             <input name="email" type="email" class="email" placeholder="E-Mail">
             <textarea name="message" type="text" class="message" placeholder="Message"></textarea>
 
-            <div class="iconcaptcha-widget" data-theme="light"></div>
-            <?php require_once __DIR__ . '/cdn/vendor/autoload.php'; use IconCaptcha\IconCaptcha; ?>
-            <?php echo \IconCaptcha\Token\IconCaptchaToken::render(); ?>
-
             <input type="submit">
         </form>
     </div>

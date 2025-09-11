@@ -6,10 +6,6 @@
         </div>
         <form class="cform" hx-post="challenge-submit.php" hx-include="[name='username']">
             <input name="username" type="username" class="email" placeholder="Lichess Username">
-
-            <div class="iconcaptcha-widget" data-theme="light"></div>
-            <?php require_once __DIR__ . '/cdn/vendor/autoload.php'; use IconCaptcha\IconCaptcha; ?>
-            <?php echo \IconCaptcha\Token\IconCaptchaToken::render(); ?>
             
             <input type="submit" hx-trigger="click" hx-post="challenge-submit.php" hx-target="#f1" hx-swap="innerHTML">
         </form>
