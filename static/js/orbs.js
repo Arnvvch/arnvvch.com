@@ -2,7 +2,7 @@ import * as PIXI from "https://cdn.skypack.dev/pixi.js@5.x";
 import { KawaseBlurFilter } from "https://cdn.skypack.dev/@pixi/filter-kawase-blur@3.2.0";
 import SimplexNoise from "https://cdn.skypack.dev/simplex-noise@3.0.0";
 import hsl from "https://cdn.skypack.dev/hsl-to-hex";
-import debounce from "https://cdn.skypack.dev/debounce";
+//import debounce from "https://cdn.jsdelivr.net/npm/debounce@latest/index.min.js";
 
 // return a random number within a range
 function random(min, max) {
@@ -16,6 +16,14 @@ function map(n, start1, end1, start2, end2) {
 
 // Create a new simplex noise instance
 const simplex = new SimplexNoise();
+
+function debounce(func, wait) {
+  let timeout;
+  return function (...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(this, args), wait);
+  };
+}
 
 // ColorPalette class
 class ColorPalette {
