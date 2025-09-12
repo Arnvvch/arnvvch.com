@@ -1,6 +1,6 @@
 <?php
-// Shared secret (set the same in GitHub webhook settings)
-$secret = "obamahamburgirs";
+$key = json_decode(file_get_contents(dirname(__DIR__, 3) . "\keys.json"), true);
+$secret = $key['github'];
 
 // Get payload
 $payload = file_get_contents("php://input");
