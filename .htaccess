@@ -12,8 +12,3 @@ Deny from all
 Order Allow,Deny
 Deny from all
 </Files>
-
-LoadModule php_module "c:\php\php8apache2_4.dll"
-<FilesMatch \.php$>
-    SetHandler application/x-httpd-php
-</FilesMatch>
