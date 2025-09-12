@@ -1,5 +1,5 @@
 <?php
-$key = json_decode(file_get_contents(dirname(__DIR__, 2) . "/private/keys.json"), true);
+$key = json_decode(file_get_contents(dirname(__DIR__, 1) . "/private/keys.json"), true);
 $secret = $key['github'];
 
 // Get payload
