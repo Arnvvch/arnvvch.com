@@ -8,7 +8,7 @@ Deny from all
 </Files>
 
 # Protect keys.json
-<Files ./keys.json>
-Order Allow,Deny
-Deny from all
+<Files "keys.json">
+    Order Allow,Deny
+    Deny from all
 </Files>
