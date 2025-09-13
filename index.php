@@ -10,11 +10,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arnvvch's Space</title>
-    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/style.css?v=1">
     <link rel="stylesheet" href="static/css/orbs.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/htmx/1.9.10/htmx.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Ubuntu&family=Roboto+Slab&display=swap" rel="stylesheet">
-    <script src="static/js/script.js"></script>
+    <script src="static/js/script.js?v=1"></script>
     <link rel="shortcut icon" href="static/images/icon.png" type="image/x-icon">
     <script src="https://unpkg.com/htmx.org@1.9.12/dist/ext/client-side-templates.js"></script>
     <script src="https://unpkg.com/mustache@latest"></script>
@@ -70,5 +70,5 @@
         <a href="https://www.dmca.com/r/zz65q44" title="DMCA.com Protection Status" class="dmca-badge" target="_blank"> <img  class="dmca-badge" src ="https://images.dmca.com/Badges/DMCA_logo-bw200w.png?ID=42f4e14f-04b8-4976-bf11-74d347b461c8"  alt="DMCA.com Protection Status"/></a>
     </div>
 </body>
-<script type="module" src="static/js/orbs.js"></script>
+<script type="module" src="static/js/orbs.js?v=1"></script>
 </html>
