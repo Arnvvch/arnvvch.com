@@ -10,8 +10,8 @@
             Im Arnav Chotkan
         </div> 
         <div class="selector">
-            <div hx-on:click="window.open('https://instagram.com/arnvvch', '_blank')"><img src="static/images/instagram.png" alt="" class="behave-img"></div>
-            <div hx-on:click="window.open('https://www.linkedin.com/in/chotkanarnav/', '_blank')"><img src="static/images/linkedin.svg" alt="" class="behave-img"></div>
+            <div hx-on:click="window.open('https://instagram.com/arnvvch', '_blank')"><img src="static/images/instagram.png?v=1" alt="" class="behave-img"></div>
+            <div hx-on:click="window.open('https://www.linkedin.com/in/chotkanarnav/', '_blank')"><img src="static/images/linkedin.svg?v=1" alt="" class="behave-img"></div>
         </div>
     </div>
     
