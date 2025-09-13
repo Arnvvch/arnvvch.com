@@ -15,7 +15,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/htmx/1.9.10/htmx.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Ubuntu&family=Roboto+Slab&display=swap" rel="stylesheet">
     <script src="static/js/script.js"></script>
-    <link rel="shortcut icon" href="static/images/icon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="static/images/icon.png" type="image/x-icon">
     <script src="https://unpkg.com/htmx.org@1.9.12/dist/ext/client-side-templates.js"></script>
     <script src="https://unpkg.com/mustache@latest"></script>
 
@@ -32,11 +32,9 @@
 <body hx-get="<?php if(isset($_GET['p']) && file_exists($_GET['p'] . '.php')) {echo $_GET['p'] . '.php';} else {echo 'home.php';} ?>" hx-trigger="load" hx-swap="innerHTML swap:0.4s" hx-target=".content" hx-replace-url="">
     <canvas class="orb-canvas"></canvas>
     <div class="header" id="header">
-        <div class="vertical-nav">
-            <img src="static/images/icon.png" alt="" class="vnav-logo">
-        </div>
         <div class="brand" id="brand">
             <button class="brand-itm" hx-get="home.php" hx-trigger="click" hx-swap="innerHTML swap:0.2s" hx-target=".content" hx-replace-url="?p=home"></button>
+            <button class="v-brand-itm" hx-get="home.php" hx-trigger="click" hx-swap="innerHTML swap:0.2s" hx-target=".content" hx-replace-url="?p=home"></button>
         </div>
         <div class="nav">
             <button class="nav-itm" hx-get="home.php" hx-trigger="click" hx-swap="innerHTML swap:0.2s" hx-target=".content" hx-replace-url="?p=home">

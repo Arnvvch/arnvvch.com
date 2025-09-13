@@ -1,5 +1,5 @@
 <div class="home-bar">
-    <img src="static/images/BussinesPersonalProfileTransparent.png" alt="" class="me">
+    <img src="static/images/profile-new.png" alt="" class="me">
     
     <div class="window homewin" id="w1">
         <div class="context">
@@ -10,15 +10,14 @@
             Im Arnav Chotkan
         </div> 
         <div class="selector">
-            <div hx-on:click="window.open('https://instagram.com/arnvvch', '_blank')"><img src="static/images/instagram.png" alt="" class="behave-img">Instagram</div>
-            <div hx-on:click="window.open('https://www.linkedin.com/in/chotkanarnav/', '_blank')"><img src="static/images/LI-In-Bug.png" alt="" class="behave-img">LinkedIN</div>
+            <div hx-on:click="window.open('https://instagram.com/arnvvch', '_blank')"><img src="static/images/instagram.png" alt="" class="behave-img"></div>
+            <div hx-on:click="window.open('https://www.linkedin.com/in/chotkanarnav/', '_blank')"><img src="static/images/linkedin.svg" alt="" class="behave-img"></div>
         </div>
     </div>
     
 </div>
 <div class="info">
     <div class="window info-window noscroll">
-        <img src="static/images/npc1.png" alt="NPC 1" class="photo">
         <h2>I'm Arnav Chotkan, a 17-year-old from Paramaribo, Suriname, enrolled in the second year of VWO (pre-university) school, with a passion for technology and entrepreneurship, fueled by a creative and knowledge-hungry mind. I exel and compete in chess and swimming also like hobby, along with programming, gaming, photography, and immersing myself in nature. My drive centers on continuous improvement, competition, and knowledge sharing.</h2>
         <img src="static/images/npc2.png" alt="NPC 2" class="photo">
     </div>
