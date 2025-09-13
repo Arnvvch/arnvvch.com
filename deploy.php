@@ -20,6 +20,6 @@ if (!hash_equals($signature, $headers['X-Hub-Signature-256'])) {
 }
 
 // Run deploy script
-$output = shell_exec("sudo -u Arnvvch /home/Arnvvch/web/arnvvch.com/deploy.sh 2>&1");
+$output = shell_exec("/home/Arnvvch/web/arnvvch.com/deploy.sh 2>&1");
 echo "<pre>$output</pre>";
 ?>
