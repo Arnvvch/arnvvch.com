@@ -1,31 +1,37 @@
-<h1 style="text-align:center;">Arnvvch's Space</h1>
-<p align="center">
-  <img src="static/images/icon.png?raw=true" width="350" title="">
-</p>
+# arnvvch.com
 
-## What is it?
+Welcome to the personal space of Arnav Chotkan. This portfolio website is built using a modern "Dark Indigo Aero" aesthetic, blending clean glassmorphism with terminal-inspired neon accents.
 
+## Tech Stack
+- **Frontend:** HTML5, CSS3 (with CSS Grid/Flexbox), JavaScript (ES6 Modules)
+- **3D Engine:** Three.js with GLTFLoader
+- **Backend/Data:** PHP 8.4
+- **Interactive UI:** HTMX for dynamic content loading
 
 ## Features
- 
-## How to install
-- Based on PHP8.4 (required)
+- **Dark Indigo Aero Theme:** A refined, modern dark mode with deep navy/indigo accents and dramatic frosted glass effects.
+- **Interactive Character Panel:** Features a 3D animated character integrated with Three.js, complete with an indigo glow pulse.
+- **Responsive Design:** Fully optimized layout for both desktop and mobile, featuring a sticky hamburger menu on smaller screens.
+- **Dynamic Content:** Seamless, modular content loading via HTMX.
 
-```
+## Getting Started
+To run this project locally, ensure you have a PHP 8.4 environment set up.
+
+```bash
 git clone https://github.com/Arnvvch/arnvvch.com.git
+cd arnvvch.com
+# Serve using your preferred PHP development server
+php -S localhost:8000
 ```
 
-## Usage
-
-
-## Issues:
-If you come across any issues please report them [here](https://github.com/Arnvvch/arnvvch.com/issues)
+## Issues
+If you come across any issues, please report them [here](https://github.com/Arnvvch/arnvvch.com/issues).
 
 ## License
 ```
 MIT License
 
-Copyright (c) 2025 Arnch, Arnav Chotkan
+Copyright (c) 2026 Arnvvch, Arnav Chotkan
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -44,5 +50,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```

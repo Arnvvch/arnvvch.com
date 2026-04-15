@@ -1,74 +1,82 @@
-<?php
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arnvvch's Space</title>
-    <link rel="stylesheet" href="static/css/style.css?v=1">
-    <link rel="stylesheet" href="static/css/orbs.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/htmx/1.9.10/htmx.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Ubuntu&family=Roboto+Slab&display=swap" rel="stylesheet">
-    <script src="static/js/script.js?v=1"></script>
-    <link rel="shortcut icon" href="static/images/icon.png?v=1" type="image/x-icon">
-    <script src="https://unpkg.com/htmx.org@1.9.12/dist/ext/client-side-templates.js"></script>
-    <script src="https://unpkg.com/mustache@latest"></script>
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZR8H95R97T"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-ZR8H95R97T');
+    <title>arnvvch.com</title>
+    <meta name="description" content="Personal portfolio of Arnav Chotkan - Developer, Student, and Tech Enthusiast.">
+    <meta property="og:title" content="arnvvch.com">
+    <meta property="og:description" content="Explore my projects, journey, and contact info.">
+    
+    <!-- Modern Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <script async src="https://unpkg.com/es-module-shims@1.8.0/dist/es-module-shims.js"></script>
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+        }
+    }
     </script>
 </head>
-<body hx-get="<?php if(isset($_GET['p']) && file_exists($_GET['p'] . '.php')) {echo $_GET['p'] . '.php';} else {echo 'home.php';} ?>" hx-trigger="load" hx-swap="innerHTML swap:0.4s" hx-target=".content" hx-replace-url="">
-    <canvas class="orb-canvas"></canvas>
-    <div class="header" id="header">
-        <div class="brand" id="brand">
-            <button class="brand-itm" hx-get="home.php" hx-trigger="click" hx-swap="innerHTML swap:0.2s" hx-target=".content" hx-replace-url="?p=home"></button>
-            <button class="v-brand-itm" hx-get="home.php" hx-trigger="click" hx-swap="innerHTML swap:0.2s" hx-target=".content" hx-replace-url="?p=home"></button>
-        </div>
-        <div class="nav">
-            <button class="nav-itm" hx-get="home.php" hx-trigger="click" hx-swap="innerHTML swap:0.2s" hx-target=".content" hx-replace-url="?p=home">
-                <p>HOME</p>
-            </button>
-            <button class="nav-itm" hx-get="about.php" hx-trigger="click" hx-swap="innerHTML swap:0.2s" hx-target=".content" hx-replace-url="?p=about">
-                <p>ABOUT</p>
-            </button>
-            <button class="nav-itm" hx-get="projects.php" hx-trigger="click" hx-swap="innerHTML swap:0.2s" hx-target=".content" hx-replace-url="?p=projects">
-                <p>PROJECTS</p>
-            </button>
-            <button class="nav-itm" hx-get="contact.php" hx-trigger="click" hx-swap="innerHTML swap:0.2s" hx-target=".content" hx-replace-url="?p=contact">
-                <p>CONTACT</p>
-            </button>
-        </div>
-    </div>
-    <div class="content">
-        <div class="middle">
-            <div class="carousel">
-                <div></div>
-                <div></div>
+<body>
+    <div class="main-container">
+        <!-- New Top Header -->
+        <header class="top-nav">
+            <div class="brand">arnvvch<span>.com</span></div>
+            <button class="hamburger" onclick="toggleMenu()">☰</button>
+        </header>
+
+        <!-- Layout Wrapper -->
+        <div class="layout">
+            <!-- Left Panel (Character Area) -->
+            <div class="model-area">
+                <div class="character-glow-orb"></div>
+                <div id="three-container"></div>
             </div>
+
+            <!-- Sidebar Navigation (Hidden on mobile) -->
+            <nav class="sidebar" id="nav-menu">
+                <div class="nav-links">
+                    <button class="nav-button active" hx-get="content/home.php" hx-target=".window-content" onclick="toggleMenu(); updateActive(this)">HOME</button>
+                    <button class="nav-button" hx-get="content/about.php" hx-target=".window-content" onclick="toggleMenu(); updateActive(this)">ABOUT</button>
+                    <button class="nav-button" hx-get="content/projects.php" hx-target=".window-content" onclick="toggleMenu(); updateActive(this)">PROJECTS</button>
+                    <button class="nav-button" hx-get="content/contact.php" hx-target=".window-content" onclick="toggleMenu(); updateActive(this)">CONTACT</button>
+                </div>
+            </nav>
+
+            <!-- Main Content Area -->
+            <main class="content-area">
+                <div id="content-box" class="glass-box">
+                    <div class="new-corner-decor-wrapper"></div>
+                    <div class="new-scanner-line"></div>
+                    <div class="new-bg-shape" style="width: 40px; height: 40px; top: 10%; right: 10%;"></div>
+                    <div class="new-bg-shape" style="width: 20px; height: 20px; bottom: 20%; left: 5%; border-radius: 50%;"></div>
+                    
+                    <div class="window-content">
+                        <?php include 'content/home.php'; ?>
+                    </div>
+                </div>
+            </main>
         </div>
     </div>
-    <div class="footer">
-        <div class="window">
-            <form hx-post="newsletter-submit.php" hx-include="[name='email']">
-                <input type="email" name="email" id="email" placeholder="Subscribe to Newsletter!">
-            
-            </form>     
-        </div>
-        <p>COPYRIGHT © ARNAV CHOTKAN | 2023 - <?php echo date("Y"); ?></p>
-        <a href="https://www.dmca.com/r/zz65q44" title="DMCA.com Protection Status" class="dmca-badge" target="_blank"> <img  class="dmca-badge" src ="https://images.dmca.com/Badges/DMCA_logo-bw200w.png?ID=42f4e14f-04b8-4976-bf11-74d347b461c8"  alt="DMCA.com Protection Status"/></a>
-    </div>
+
+    <script type="module" src="js/viewer.js"></script>
+    <script>
+        function updateActive(btn) {
+            document.querySelectorAll('.nav-button').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        }
+        function toggleMenu() {
+            document.getElementById('nav-menu').classList.toggle('open');
+        }
+    </script>
 </body>
-<script type="module" src="static/js/orbs.js?v=1"></script>
+</html>
+  </script>
+</body>
 </html>
